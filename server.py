@@ -1,7 +1,14 @@
 from openai import OpenAI
 from pathlib import Path
+from dotenv import load_dotenv # type: ignore
+import os
 
-openai_api_key = "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"
+load_dotenv()
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if openai_api_key is None:
+    raise ValueError("Please set the OPENAI_API_KEY environment variable")
 
 client = OpenAI(api_key=openai_api_key)
 

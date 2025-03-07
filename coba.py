@@ -1,11 +1,15 @@
 import whisper
 import openai
 import speech_recognition as sr
+from dotenv import load_dotenv
 from gtts import gTTS
 import os
 
 # OpenAI API Key
-openai_api_key = "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"  # Ganti dengan API key OpenAI Anda
+openai_api_key = os.getenv("OPENAI_API_KEY")
+if openai_api_key is None:
+    raise ValueError("Please set the OPENAI_API_KEY environment variable")
+
 openai.api_key = openai_api_key
 
 # Load Whisper Model

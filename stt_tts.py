@@ -1,8 +1,12 @@
 from openai import OpenAI
 import pyttsx3
 import speech_recognition as sr
+from dotenv import load_dotenv
+import os
 
-openai_api_key = "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"
+load_dotenv()
+
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=openai_api_key)
 # systemprompt = "You are service robot. Autonomous assistant designed to enhance the experience of students, staff, and visitors at ITS campus"

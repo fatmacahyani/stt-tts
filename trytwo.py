@@ -2,10 +2,12 @@ from openai import OpenAI
 import sounddevice as sd
 import numpy as np
 from scipy.io.wavfile import write
+from dotenv import load_dotenv
 import os
 
-# Initialize the OpenAI client
-client = OpenAI(api_key="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")
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Function to record audio from microphone
 def record_audio(duration=5, sample_rate=44100):
