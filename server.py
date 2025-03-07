@@ -20,4 +20,4 @@ while True:
     )
     print(response.choices[0].message.content)
 
-# notes
+# notes xxx
