@@ -7,9 +7,6 @@ load_dotenv()
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-if openai_api_key is None:
-    raise ValueError("Please set the OPENAI_API_KEY environment variable")
-
 client = OpenAI(api_key=openai_api_key)
 
 systemprompt ="You are a helpful assistant for your friend named Yani"

@@ -7,8 +7,6 @@ import os
 
 # OpenAI API Key
 openai_api_key = os.getenv("OPENAI_API_KEY")
-if openai_api_key is None:
-    raise ValueError("Please set the OPENAI_API_KEY environment variable")
 
 openai.api_key = openai_api_key
 
