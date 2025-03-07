@@ -11,7 +11,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 openai.api_key = openai_api_key
 
 # Load Whisper Model
-whisper_model = whisper.load_model("medium")  # Anda dapat memilih model seperti "base", "small", "medium", atau "large"
+whisper_model = whisper.load_model("medium")  # dapat memilih model "base", "small", "medium", "large"
 
 def record_audio():
     """
@@ -71,7 +71,7 @@ def text_to_speech(text):
     try:
         tts = gTTS(text, lang="id")  # Bahasa Indonesia
         tts.save("output_audio.mp3")
-        os.system("start output_audio.mp3")  # Windows: "start", macOS: "open", Linux: "xdg-open"
+        os.system("start output_audio.mp3")
     except Exception as e:
         print(f"Error dalam TTS: {e}")
 

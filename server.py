@@ -1,6 +1,6 @@
 from openai import OpenAI
 from pathlib import Path
-from dotenv import load_dotenv # type: ignore
+from dotenv import load_dotenv
 import os
 
 load_dotenv()
@@ -23,5 +23,3 @@ while True:
         stream=False
     )
     print(response.choices[0].message.content)
-
-# notes xxx
